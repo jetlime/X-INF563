@@ -33,6 +33,7 @@ void debug_print_matrix(char **M, int N){
 
 // Algorithm C: Compression Algorithm
 void alg_c(char *S, int N, char **L, int *I) {
+    DEBUG_PRINT("\nCompression transformation debug trace: \n");
 
     // Allocate memory for the matrix M of size N by N
     char **M = (char **)malloc(N * sizeof(char *));

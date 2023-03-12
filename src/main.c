@@ -18,12 +18,12 @@ int main() {
     // Decompression transformation (Algorithm D)
     alg_d(&L, &I, &F);
 
-    printf("Compression transformation:\n");
+    printf("\n Compression transformation:\n");
     printf("L = %s\n", L);
     printf("I = %d\n", I);
 
-    printf("\n  Compression transformation:\n");
-    printf("S = %s\n", F);
+    printf("\n Compression transformation:\n");
+    printf("S = \n");
 
     free(L);
     return 0;

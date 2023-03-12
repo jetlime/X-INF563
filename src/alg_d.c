@@ -11,12 +11,14 @@ int string_compare(const void *a, const void *b) {
 }
 // Algorithm D: Decompression Algorithm
 void alg_d(char **L, int *I, char **F) {
+    DEBUG_PRINT("\nDecompression transformation debug trace: \n");
+
     int N = strlen(*L);
     
     strcpy(*F,*L); 
     // sort L
     qsort(*F, N, sizeof(char), string_compare);
 
-    DEBUG_PRINT("s");
+    DEBUG_PRINT("F= %s\n",*F);
 
 }
