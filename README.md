@@ -3,6 +3,14 @@
 C implementation of the source coding with the Burrows-Wheeler transforme. A generally better source coding than Zempel-Ziv is many cases
 it is used in *bzip2* for instance).
 
+## Usage
+
+- Compilation
+
+```bash
+gcc ./src/main.c ./src/alg_c.c -o program.exe 
+```
+
 ## References
 - [The article of Burrows Wheeler](https://www.hpl.hp.com/techreports/Compaq-DEC/SRC-RR-124.pdf)
 - [An article about this article](https://marknelson.us/posts/1996/09/01/bwt.html)
