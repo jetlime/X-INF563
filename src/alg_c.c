@@ -2,11 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-//#define DEBUG 0
+#define DEBUG 1
+
 #ifdef DEBUG
-#define DEBUG_PRINT(fmt, args...)    fprintf(stderr, fmt, ## args)
+#define DEBUG_PRINT(fmt, args...)  fprintf(stderr, fmt, ## args)
 #else
-#define DEBUG_PRINT(fmt, args...)    /* Don't do anything in release builds */
+#define DEBUG_PRINT(fmt, args...)    /* do nothing */
 #endif
 
 // Function to compare two strings lexicographically
@@ -17,12 +18,23 @@ int string_compare(const void *a, const void *b) {
 }
 
 // Function to rotate a string by one character
-void shift_cyclic(char *str, int len) {
+void shift_cyclic(char *str, int N) {
     char first = str[0];
-    for (int i = 1; i < len; i++) {
+    for (int i = 1; i < N; i++) {
         str[i - 1] = str[i];
     }
-    str[len - 1] = first;
+    str[N - 1] = first;
+}
+
+void debug_print_matrix(char **M, int N){
+    for (int row=0; row<N; row++)
+    {
+        for(int columns=0; columns<N; columns++)
+        {
+            DEBUG_PRINT("%c     ", M[row][columns]);
+        }
+        printf("\n");
+    }
 }
 
 // Algorithm C: Compression Algorithm
@@ -41,16 +53,14 @@ void alg_c(char *S, int N, char **L, int *I) {
         strcpy(M[i], S);
         shift_cyclic(S, N);
     }
-    for (int row=0; row<N; row++)
-    {
-        for(int columns=0; columns<N; columns++)
-        {
-            DEBUG_PRINT("%c     ", M[row][columns]);
-        }
-        printf("\n");
-    }
+
+    DEBUG_PRINT("\nPrint Matrix M (unsorted):\n");
+    debug_print_matrix(M, N);
 
     qsort(M, N, sizeof(char *), string_compare);
+
+    DEBUG_PRINT("\nPrint Matrix M (sorted):\n");
+    debug_print_matrix(M,N);
 
     // Find the index I of the row containing the original string S
     for (int i = 0; i < N; i++) {
