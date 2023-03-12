@@ -25,7 +25,7 @@ void debug_print_matrix(char **M, int N){
     {
         for(int columns=0; columns<N; columns++)
         {
-            DEBUG_PRINT("%c     ", M[row][columns]);
+            DEBUG_PRINT("%c ", M[row][columns]);
         }
         DEBUG_PRINT("\n");
     }
