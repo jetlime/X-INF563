@@ -4,19 +4,18 @@
 #include <debug.h>
 
 void alg_c(char *S, int N, char **L, int *I);
-void alg_d(char **L, int *I, char **F);
+void alg_d(char **L, int *I);
 
 int main() {
     char S[] = "abraca";
     int N = strlen(S);
     char *L = (char *)malloc(N * sizeof(char));
     int I;
-    char *F = (char *)malloc(N * sizeof(char));
 
     // Compression transformation (Algorithm C)
     alg_c(S, N, &L, &I);
     // Decompression transformation (Algorithm D)
-    alg_d(&L, &I, &F);
+    alg_d(&L, &I);
 
     printf("\n Compression transformation:\n");
     printf("L = %s\n", L);

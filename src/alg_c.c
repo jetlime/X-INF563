@@ -27,7 +27,7 @@ void debug_print_matrix(char **M, int N){
         {
             DEBUG_PRINT("%c     ", M[row][columns]);
         }
-        printf("\n");
+        DEBUG_PRINT("\n");
     }
 }
 
