@@ -4,7 +4,6 @@
 #include <debug.h>
 
 void debug_print_array(int *T, int N){
-    DEBUG_PRINT("T = ");
     for (int row=0; row<N; row++)
     {
         DEBUG_PRINT("%d ", T[row]);   
@@ -47,20 +46,36 @@ void compute_T(int N, char **F, int **T,char ***L){
             }
         }
     }
+
+    DEBUG_PRINT("T = ");
     debug_print_array(*T,N);
 }
 
-void compute_S(){
+int compute_T_recursion(int i, int x,int *T) {
+    if (i == 0) {
+        return x;
+    }else{
+        return T[compute_T_recursion(i-1,x,T)];
+    }
+}
 
+void compute_S(int N,int **I,char **S, char ***L, int **T){
+    for(int i=0;i<N;i++)
+    {
+        // compute T^i[x]
+        int index = compute_T_recursion(i,**I,*T);
+        (*S)[N-1-i] = (**L)[index];
+    }
 }
 
 // Algorithm D: Decompression Algorithm
-void alg_d(char **L, int *I) {
+char *alg_d(char **L, int *I) {
     DEBUG_PRINT("\nDecompression transformation debug trace: \n");
 
     int N = strlen(*L);
     char *F = (char *)malloc(N * sizeof(char));
     int *T = (int *)malloc(N* sizeof(int));
+    char *S = (char *)malloc(N * sizeof(char));
 
     // D1. find first characters of rotations
     first_rotation_char(N, &L,&F);
@@ -69,8 +84,10 @@ void alg_d(char **L, int *I) {
     compute_T(N,&F,&T,&L);
 
     // D3. form string S
-    compute_S();
-
+    compute_S(N,&I,&S,&L,&T);
+    
     free(F);
     free(T);
+
+    return S;
 }
