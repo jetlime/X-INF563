@@ -8,7 +8,7 @@ it is used in *bzip2* for instance).
 - Compilation
 
 ```bash
-gcc ./src/main.c ./src/alg_c.c -o program.exe 
+gcc ./src/main.c ./src/alg_c.c ./src/alg_d.c -o program.exe 
 ```
 
 ## References

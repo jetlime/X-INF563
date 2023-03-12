@@ -1,17 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <debug.h>
 
-#define DEBUG 1
 
-#ifdef DEBUG
-#define DEBUG_PRINT(fmt, args...)  fprintf(stderr, fmt, ## args)
-#else
-#define DEBUG_PRINT(fmt, args...)    /* do nothing */
-#endif
-
-// Function to compare two strings lexicographically
-int string_compare(const void *a, const void *b) {
+// Function to compare two strings lexicographically for array of strings
+int string_compare_array(const void *a, const void *b) {
     const char **sa = (const char **)a;
     const char **sb = (const char **)b;
     return strcmp(*sa, *sb);
@@ -53,11 +47,11 @@ void alg_c(char *S, int N, char **L, int *I) {
         strcpy(M[i], S);
         shift_cyclic(S, N);
     }
-
+    
     DEBUG_PRINT("\nPrint Matrix M (unsorted):\n");
     debug_print_matrix(M, N);
 
-    qsort(M, N, sizeof(char *), string_compare);
+    qsort(M, N, sizeof(char *), string_compare_array);
 
     DEBUG_PRINT("\nPrint Matrix M (sorted):\n");
     debug_print_matrix(M,N);
