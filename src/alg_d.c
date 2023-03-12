@@ -4,9 +4,10 @@
 #include <debug.h>
 
 void debug_print_array(int *T, int N){
+    DEBUG_PRINT("T = ");
     for (int row=0; row<N; row++)
     {
-        DEBUG_PRINT("%d     ", T[row]);   
+        DEBUG_PRINT("%d ", T[row]);   
     }
 }
 // Function to compare two strings lexicographically for simple strings
@@ -49,6 +50,10 @@ void compute_T(int N, char **F, int **T,char ***L){
     debug_print_array(*T,N);
 }
 
+void compute_S(){
+
+}
+
 // Algorithm D: Decompression Algorithm
 void alg_d(char **L, int *I) {
     DEBUG_PRINT("\nDecompression transformation debug trace: \n");
@@ -62,6 +67,9 @@ void alg_d(char **L, int *I) {
 
     // D2. build list of predecessor characters
     compute_T(N,&F,&T,&L);
+
+    // D3. form string S
+    compute_S();
 
     free(F);
     free(T);
