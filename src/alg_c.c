@@ -32,7 +32,7 @@ void debug_print_matrix(char **M, int N){
 }
 
 // Algorithm C: Compression Algorithm
-void alg_c(char *S, int N, char **L, int *I) {
+void alg_c(char *S, int N, char *L, int *I) {
     DEBUG_PRINT("\nCompression transformation debug trace: \n");
 
     // Allocate memory for the matrix M of size N by N
@@ -67,7 +67,7 @@ void alg_c(char *S, int N, char **L, int *I) {
 
     // Extract the last column L of M
     for (int i = 0; i < N; i++) {
-        (*L)[i] = M[i][N - 1];
+        L[i] = M[i][N - 1];
     }
 
     // Free the memory used by M

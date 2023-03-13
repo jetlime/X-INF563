@@ -3,8 +3,8 @@
 #include <string.h>
 #include <debug.h>
 
-void alg_c(char *S, int N, char **L, int *I);
-char* alg_d(char **L, int *I);
+void alg_c(char *S, int N, char *L, int *I);
+char* alg_d(char *L, int *I);
 
 int main() {
     char S[] = ">#<Using the BWT as a front end for data compression has a result similar to that of simple statistical modeling programs.Paul was here. This is a test>#<";
@@ -13,9 +13,9 @@ int main() {
     int I;
 
     // Compression transformation (Algorithm C)
-    alg_c(S, N, &L, &I);
+    alg_c(S, N, L, &I);
     // Decompression transformation (Algorithm D)
-    char *S_revored = alg_d(&L, &I);
+    char *S_revored = alg_d(L, &I);
 
     printf("\n Compression transformation:\n");
     printf("L = %s\n", L);

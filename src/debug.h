@@ -1,4 +1,4 @@
-#define DEBUG 0
+//#define DEBUG 0
 
 #ifdef DEBUG
 #define DEBUG_PRINT(fmt, args...)  fprintf(stderr, fmt, ## args)
