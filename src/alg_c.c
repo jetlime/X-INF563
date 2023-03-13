@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <debug.h>
+#include "debug.h"
 
 
 // Function to compare two strings lexicographically for array of strings

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <debug.h>
+#include "debug.h"
 
 void alg_c(char *S, int N, char *L, int *I);
 char* alg_d(char *L, int *I);

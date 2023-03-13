@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <debug.h>
+#include "debug.h"
 
 void debug_print_array(int *T, int N){
     for (int row=0; row<N; row++)
