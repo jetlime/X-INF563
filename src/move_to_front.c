@@ -40,17 +40,44 @@ int find_int_idx(int *arr, int len, int target) {
 	return -1;
 }
 
-int *move_to_front(char *L, int N) {
+int *move_to_front_enc(char *L, char *Y, int N) {
 	int *R;
 	int i;
 
-	char *Y = gen_alpha(L, N);
 	R = (uint *)malloc(N * sizeof(unsigned int));
 	for (i = 0; i < N; i++) {
 		R[i] = strchr(Y, L[i]) - Y;
 		bring_to_front(Y, R[i]);
 	}
 
-	free(Y);
 	return R;
 }
+
+char *move_to_front_dec(int *R, char *Y, int N) {
+	char *L = (char *)malloc(N);
+	for (int i = 0; i < N; i++) {
+		L[i] = Y[R[i]];
+	    bring_to_front(Y, R[i]);
+	}
+	return L;
+}
+
+/* int main() { */
+/* 	char *L = "caraab"; */
+/* 	int N = strlen(L); */
+/* 	char *Y = gen_alpha(L, N); */
+/* 	/\* char Y[5] = { 'a', 'b', 'c', 'r', '\0' }; *\/ */
+/* 	int Ylen = strlen(Y); */
+/* 	char *Ycp = (char *)calloc(Ylen, 1); */
+/* 	memcpy(Ycp, Y, Ylen); */
+
+/* 	int *enc = move_to_front_enc(L, Ycp, N); */
+/* 	for (int i = 0; i < N; i++) printf("%i ", enc[i]); */
+/* 	putchar('\n'); */
+
+/* 	memcpy(Ycp, Y, Ylen); */
+/* 	char *dec = move_to_front_dec(enc, Ycp, N); */
+/* 	printf("%s\n", dec); */
+	
+/* 	return 0; */
+/* } */
