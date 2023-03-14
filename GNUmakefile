@@ -4,8 +4,9 @@ LIBS=
 BLDFLAGS=-O2 -g
 
 TARGET=program.exe
-DEPS=src/alg_c.c src/alg_d.c src/main.c
-HEAD=src/debug.h
+DEPS=src/alg_c.c src/alg_d.c src/move_to_front.c \
+		src/main.c
+HEAD=src/debug.h src/move_to_front.h
 OBJ=$(patsubst src/%.c,obj/%.o,$(DEPS))
 
 .PHONY: all clean
