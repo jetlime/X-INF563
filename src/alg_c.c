@@ -6,8 +6,8 @@
 
 // Function to compare two strings lexicographically for array of strings
 int string_compare_array(const void *a, const void *b) {
-    const char **sa = (const char **)a;
-    const char **sb = (const char **)b;
+    char **sa = (char **)a;
+    char **sb = (char **)b;
     return strcmp(*sa, *sb);
 }
 
@@ -21,8 +21,10 @@ void shift_cyclic(char *str, int N) {
 }
 
 void debug_print_matrix(char **M, int N){
+    DEBUG_PRINT("Row  \n");
     for (int row=0; row<N; row++)
     {
+        DEBUG_PRINT("%d    ",row);
         for(int columns=0; columns<N; columns++)
         {
             DEBUG_PRINT("%c ", M[row][columns]);
@@ -34,6 +36,7 @@ void debug_print_matrix(char **M, int N){
 // Algorithm C: Compression Algorithm
 void alg_c(char *S, int N, char *L, int *I) {
     DEBUG_PRINT("\nCompression transformation debug trace: \n");
+    printf("%s\n", S);
 
     // Allocate memory for the matrix M of size N by N
     char **M = (char **)malloc(N * sizeof(char *));
@@ -56,7 +59,7 @@ void alg_c(char *S, int N, char *L, int *I) {
 
     DEBUG_PRINT("\nPrint Matrix M (sorted):\n");
     debug_print_matrix(M,N);
-
+    
     // Find the index I of the row containing the original string S
     for (int i = 0; i < N; i++) {
         if (strcmp(M[i], S) == 0) {
