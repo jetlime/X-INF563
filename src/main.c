@@ -7,7 +7,28 @@ void alg_c(char *S, int N, char *L, int *I);
 char* alg_d(char *L, int *I);
 
 int main() {
-    char S[] = ">#<Using the BWT as a front end for data compression has a result similar to that of simple statistical modeling programs.Paul was here. This is a test>#<";
+    // read input file
+    /*
+    FILE* input_file = fopen("encode.txt", "r");
+    if (!input_file)
+        exit(EXIT_FAILURE);
+
+    struct stat sb;
+    if (stat("encode.txt", &sb) == -1) {
+        perror("stat");
+        exit(EXIT_FAILURE);
+    }
+
+    char* S = malloc(sb.st_size);
+    fread(S, sb.st_size, 1, input_file);
+
+    printf("%s\n", S);
+
+    fclose(input_file);
+    free(S);
+    */
+
+    char S[] = "information theory";
     int N = strlen(S);
     char *L = (char *)malloc(N * sizeof(char));
     int I;
