@@ -88,5 +88,7 @@ int main() {
 
     free(L);
     free(S_revored);
+    free(decoded_L);
+    free(decoded_R);
     return 0;
 }
