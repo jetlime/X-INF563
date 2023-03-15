@@ -6,7 +6,7 @@
 void debug_print_array(int *T, int N){
     for (int row=0; row<N; row++)
     {
-        DEBUG_PRINT("%d ", T[row]);   
+        printf("%d ", T[row]);   
     }
 }
 // Function to compare two strings lexicographically for simple strings
@@ -20,7 +20,7 @@ void first_rotation_char(int N, char *L ,char *F){
     strcpy(F,L); 
     // sort L
     qsort(F, N, sizeof(char), string_compare);
-    DEBUG_PRINT("F= %s\n",F);
+    printf("\nF= %s\n",F);
 }
 
 void compute_T(int N, char *F, int *T,char *L){
@@ -47,7 +47,7 @@ void compute_T(int N, char *F, int *T,char *L){
         }
     }
 
-    DEBUG_PRINT("T = ");
+    printf("T = ");
     debug_print_array(T,N);
 }
 
@@ -70,8 +70,6 @@ void compute_S(int N,int *I,char *S, char *L, int *T){
 
 // Algorithm D: Decompression Algorithm
 char *alg_d(char *L, int *I) {
-    DEBUG_PRINT("\nDecompression transformation debug trace: \n");
-
     int N = strlen(L);
     char *F = (char *)malloc(N * sizeof(char));
     int *T = (int *)malloc(N* sizeof(int));

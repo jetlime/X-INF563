@@ -21,23 +21,22 @@ void shift_cyclic(char *str, int N) {
 }
 
 void debug_print_matrix(char **M, int N){
-    DEBUG_PRINT("Row  \n");
     for (int row=0; row<N; row++)
     {
-        DEBUG_PRINT("%d    ",row);
         for(int columns=0; columns<N; columns++)
         {
-            DEBUG_PRINT("%c ", M[row][columns]);
+            printf("%c ", M[row][columns]);
         }
-        DEBUG_PRINT("\n");
+        if(row==0){
+            printf("  | Row  \n");
+        }else{
+            printf("  | %d  \n",row);
+        }
     }
 }
 
 // Algorithm C: Compression Algorithm
 void alg_c(char *S, int N, char *L, int *I) {
-    DEBUG_PRINT("\nCompression transformation debug trace: \n");
-    printf("%s\n", S);
-
     // Allocate memory for the matrix M of size N by N
     char **M = (char **)malloc(N * sizeof(char *));
     
@@ -52,12 +51,12 @@ void alg_c(char *S, int N, char *L, int *I) {
         shift_cyclic(S, N);
     }
     
-    DEBUG_PRINT("\nPrint Matrix M (unsorted):\n");
+    printf("\nPrint Matrix M (unsorted):\n");
     debug_print_matrix(M, N);
 
     qsort(M, N, sizeof(char *), string_compare_array);
 
-    DEBUG_PRINT("\nPrint Matrix M (sorted):\n");
+    printf("\nPrint Matrix M (sorted):\n");
     debug_print_matrix(M,N);
     
     // Find the index I of the row containing the original string S
