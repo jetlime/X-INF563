@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include "debug.h"
 
 // Function to compare two strings lexicographically for array of strings
 int string_compare_array(const void *a, const void *b) {
@@ -24,12 +24,12 @@ void debug_print_matrix(char **M, int N){
     {
         for(int columns=0; columns<N; columns++)
         {
-            printf("%c ", M[row][columns]);
+            DEBUG_PRINT("%c ", M[row][columns]);
         }
         if(row==0){
-            printf("  | Row (0)  \n");
+            DEBUG_PRINT("  | Row (0)  \n");
         }else{
-            printf("  | %d  \n",row);
+            DEBUG_PRINT("  | %d  \n",row);
         }
     }
 }
@@ -50,12 +50,12 @@ void alg_c(char *S, int N, char *L, int *I) {
         shift_cyclic(S, N);
     }
     
-    printf("\nPrint Matrix M (unsorted):\n");
+    DEBUG_PRINT("\nPrint Matrix M (unsorted):\n");
     debug_print_matrix(M, N);
 
     qsort(M, N, sizeof(char *), string_compare_array);
 
-    printf("\nPrint Matrix M (sorted):\n");
+    DEBUG_PRINT("\nPrint Matrix M (sorted):\n");
     debug_print_matrix(M,N);
     
     // Find the index I of the row containing the original string S

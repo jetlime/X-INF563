@@ -1,4 +1,5 @@
 #include "arithmetic_coding.h"
+#include "debug.h"
 
 float *gen_intervals(int *R, int N, int *sz_of_prob) {
 	int max=0;
@@ -33,9 +34,9 @@ float arith_encode(int *R, int N, float *cp, int cp_sz) {
 	for (int i = 0; i < N; i++) {
 		scale_interval(cp, subint, cp_sz, lowbound, highbound);
 
-		printf("lo: %f ", lowbound);
-		for (int i = 0; i < cp_sz; i++) printf("%f ", subint[i]);
-		printf("%f :hi\n", highbound);
+		DEBUG_PRINT("lo: %f ", lowbound);
+		for (int i = 0; i < cp_sz; i++) DEBUG_PRINT("%f ", subint[i]);
+		DEBUG_PRINT("%f :hi\n", highbound);
 
 		highbound = subint[R[i]];
 		lowbound = R[i] ? subint[R[i]-1] : lowbound;
@@ -55,17 +56,17 @@ int* arith_decode(float *cp, int cp_sz, int N, float coded_value) {
 	for (int i = 0; i < N; i++) {
 		scale_interval(cp, subint, cp_sz, lowbound, highbound);
 
-		printf("lo: %f ", lowbound);
-		for (int i = 0; i < cp_sz; i++) printf("%f ", subint[i]);
-		printf("%f :hi\n", highbound);
+		DEBUG_PRINT("lo: %f ", lowbound);
+		for (int i = 0; i < cp_sz; i++) DEBUG_PRINT("%f ", subint[i]);
+		DEBUG_PRINT("%f :hi\n", highbound);
 		int j = 0;
         for (j=0; coded_value > subint[j]; j++);
 		highbound = subint[j];
 		lowbound = j ? subint[j-1] : lowbound;
 		decoded_vector[i]=j;
 	}
-	printf("\nDecoded vector R: ");
+	DEBUG_PRINT("\nDecoded vector R: ");
 	for (int i = 0; i < N; i++) 
-		printf("%i ", decoded_vector[i]);
+		DEBUG_PRINT("%i ", decoded_vector[i]);
 	return decoded_vector;
 }
