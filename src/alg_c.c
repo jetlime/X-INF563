@@ -19,17 +19,17 @@ void shift_cyclic(char *str, int N) {
     str[N - 1] = first;
 }
 
-void debug_print_matrix(char **M, int N){
+void printf_matrix(char **M, int N){
     for (int row=0; row<N; row++)
     {
         for(int columns=0; columns<N; columns++)
         {
-            DEBUG_PRINT("%c ", M[row][columns]);
+            printf("%c ", M[row][columns]);
         }
         if(row==0){
-            DEBUG_PRINT("  | Row (0)  \n");
+            printf("  | Row (0)  \n");
         }else{
-            DEBUG_PRINT("  | %d  \n",row);
+            printf("  | %d  \n",row);
         }
     }
 }
@@ -50,13 +50,13 @@ void alg_c(char *S, int N, char *L, int *I) {
         shift_cyclic(S, N);
     }
     
-    DEBUG_PRINT("\nPrint Matrix M (unsorted):\n");
-    debug_print_matrix(M, N);
+    printf("\nPrint Matrix M (unsorted):\n");
+    printf_matrix(M, N);
 
     qsort(M, N, sizeof(char *), string_compare_array);
 
-    DEBUG_PRINT("\nPrint Matrix M (sorted):\n");
-    debug_print_matrix(M,N);
+    printf("\nPrint Matrix M (sorted):\n");
+    printf_matrix(M,N);
     
     // Find the index I of the row containing the original string S
     for (int i = 0; i < N; i++) {
