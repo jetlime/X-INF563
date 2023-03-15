@@ -1,2 +1,4 @@
-OUT: 0.025838
-I: 193
+OUT: 0.029623
+I: 14
+N: 19
+Y: sewpnrdh uial 

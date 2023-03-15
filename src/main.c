@@ -75,7 +75,9 @@ int main(){
     }
     // fwrite(OUT, strlen(OUT), 1, output_file);
     fprintf(output_file, "OUT: %f\n", OUT);
-    fprintf(output_file,"I: %d",I);
+    fprintf(output_file,"I: %d\n",I);
+    fprintf(output_file,"N: %d\n",N);
+    fprintf(output_file,"Y: %s ", Y);
     fclose(output_file);
 
     printf("\n-----------Step 04: Arithmetic Decoding-----------\n\n");
