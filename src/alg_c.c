@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "debug.h"
 
 
 // Function to compare two strings lexicographically for array of strings
@@ -28,7 +27,7 @@ void debug_print_matrix(char **M, int N){
             printf("%c ", M[row][columns]);
         }
         if(row==0){
-            printf("  | Row  \n");
+            printf("  | Row (0)  \n");
         }else{
             printf("  | %d  \n",row);
         }

@@ -65,28 +65,8 @@ int* arith_decode(float *cp, int cp_sz, int N, float coded_value) {
 		lowbound = j ? subint[j-1] : lowbound;
 		decoded_vector[i]=j;
 	}
+	printf("\nDecoded vector R: ");
 	for (int i = 0; i < N; i++) 
-		printf("%i, ", decoded_vector[i]);
+		printf("%i ", decoded_vector[i]);
 	return decoded_vector;
 }
-
-// int main() {
-// 	int R[] = {2, 1, 3, 1, 0, 3};
-// 	int N = 6;
-// 	int cp_sz;
-
-// 	float *cp = gen_intervals(R, N, &cp_sz);
-// 	for (int i = 0; i <= cp_sz; i++) printf("%f, ", cp[i]);
-// 	float x=arith_encode(R, N, cp, cp_sz);
-//  	printf("\n%f\n", x);
-
-
-// 	printf("\nSilviu:\n");
-// 	int* decoded_vector;
-//     decoded_vector=(int*)calloc(N, sizeof(int));
-
-// 	decoded_vector=arith_decode(cp, cp_sz, N, x);
-// 	//for (int i = 0; i < N; i++) 
-// 		//printf("%i, ", decoded_vector[i]);
-//  	return 0;
-//  } 
