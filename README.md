@@ -1,5 +1,5 @@
 # INF563 - Final Project
-
+# IMPORTANT NOTE: Fully functional BWT Transformation located in branch [bwt_transformation](https://github.com/jetlime/X-INF563/tree/btw_transformation)
 C implementation of the source coding with the Burrows-Wheeler transformer. A generally better source coding than Zempel-Ziv is many cases
 it is used in *bzip2* for instance.
 
