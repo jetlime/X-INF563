@@ -1,6 +1,2 @@
-OUT: [0.020408]
-I: 6
-N: 8
-Y: [htyeoisr]
-Arithmetic Encoding header:
- Coding Model: 0.125000, 0.250000, 0.375000, 0.500000, 0.625000, 0.750000, 0.875000, 1.000000, 
+L: [s.gsnn,d.sFtteFettFlee,dgssSddesdreosnellefldrnnhIxdLyrS OBB BRD      DDDOBR. rttinn    h  llnmr e  e anenneenr hhhhhhhvpSttgsrdtrdo   nngaiiitctttttttcrrs    ggrratff wraaal  aooo uuuimiiiiigaaaoiioimmoeS Ccccicf   s seuoearo pootttaeiioannnrniee  rraa  ssss nnrci       assalllo  ia]
+I: 76

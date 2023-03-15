@@ -1,1 +1,1 @@
-theoryis
+Second, I ve tagged the first and last columns in the matrix with the special designations F and L, for the first and last columns of the array. Column F contains all the characters in the original string in sorted order. So our original string DRDOBBS is represented in F as BBDDORS.
