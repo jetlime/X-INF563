@@ -61,4 +61,3 @@ char *move_to_front_dec(int *R, char *Y, int N) {
 	}
 	return L;
 }
-

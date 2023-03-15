@@ -53,17 +53,23 @@ int main() {
     char *Ycp = (char *)calloc(Ylen, 1); 
     memcpy(Ycp, Y, Ylen);
     int *R = move_to_front_enc(L, Ycp, N);
-    printf("R = ");
+    printf("L = ");
     for (int i = 0; i < N; i++) printf("%i ", R[i]);
-    putchar('\n');
+    printf("(Encoded with move-to-front)\n");
+
+    printf("\n-----------Step 03: Arithmetic Encoding-----------\n\n");
+    
+
+    printf("\n-----------Step 04: Arithmetic Decoding-----------\n\n");
+
 
     printf("\n-----------Step 05: Move-to-front Decoding-----------\n\n");
     memcpy(Ycp, Y, Ylen);
-    char *dec = move_to_front_dec(R, Ycp, N);
-    printf("%s\n", dec);
+    L = move_to_front_dec(R, Ycp, N);
+    printf("L = %s\n", L);
 
     // Decompression transformation (Algorithm D)
-    printf("\n\n-----------Step 06: Decompression Tranformation-----------\n\n");
+    printf("\n-----------Step 06: Decompression Tranformation-----------\n\n");
     char *S_revored = alg_d(L, &I);
     printf("\nS = %s\n",S_revored);
 

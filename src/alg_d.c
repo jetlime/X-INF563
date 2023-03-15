@@ -20,7 +20,7 @@ void first_rotation_char(int N, char *L ,char *F){
     strcpy(F,L); 
     // sort L
     qsort(F, N, sizeof(char), string_compare);
-    printf("\nF= %s\n",F);
+    printf("F= %s\n",F);
 }
 
 void compute_T(int N, char *F, int *T,char *L){
