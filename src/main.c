@@ -63,7 +63,9 @@ int main(){
 	int cp_sz;
 
 	float *cp = gen_intervals(R, N, &cp_sz);
-	for (int i = 0; i <= cp_sz; i++) printf("%f, ", cp[i]);
+    printf("Coding Model:  ");
+	for (int i = 0; i <= cp_sz; i++) printf("%f ", cp[i]);
+    printf("\n\n");
 	float OUT=arith_encode(R, N, cp, cp_sz);
  	printf("\nEncoding: %f\n", OUT);
 
@@ -74,10 +76,12 @@ int main(){
         return 1;
     }
     // fwrite(OUT, strlen(OUT), 1, output_file);
-    fprintf(output_file, "OUT: %f\n", OUT);
+    fprintf(output_file, "OUT: [%f]\n", OUT);
     fprintf(output_file,"I: %d\n",I);
     fprintf(output_file,"N: %d\n",N);
-    fprintf(output_file,"Y: %s ", Y);
+    fprintf(output_file,"Y: [%s]\n", Y);
+    fprintf(output_file,"Arithmetic Encoding header:\n Coding Model: ");
+    for (int i = 0; i <= cp_sz; i++) fprintf(output_file,"%f, ", cp[i]);
     fclose(output_file);
 
     printf("\n-----------Step 04: Arithmetic Decoding-----------\n\n");
@@ -89,13 +93,13 @@ int main(){
     printf("\n\n-----------Step 05: Move-to-front Decoding-----------\n\n");
     memcpy(Ycp, Y, Ylen);
     char * decoded_L = (char *)malloc(N * sizeof(char));
-    decoded_L = move_to_front_dec(R, Ycp, N);
+    decoded_L = move_to_front_dec(decoded_R, Ycp, N);
     printf("L = %s\n", L);
 
     // Decompression transformation (Algorithm D)
     printf("\n-----------Step 06: Decompression Tranformation-----------\n\n");
     char *S_revored = alg_d(decoded_L, &I);
-    printf("\nS = %s\n",S_revored);
+    printf("\n\nS = %s\n",S_revored);
 
     free(L);
     free(S_revored);

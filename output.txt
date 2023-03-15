@@ -1,4 +1,6 @@
-OUT: 0.029623
-I: 14
-N: 19
-Y: sewpnrdh uial 
+OUT: [0.020408]
+I: 6
+N: 8
+Y: [htyeoisr]
+Arithmetic Encoding header:
+ Coding Model: 0.125000, 0.250000, 0.375000, 0.500000, 0.625000, 0.750000, 0.875000, 1.000000, 
