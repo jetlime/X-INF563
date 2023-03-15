@@ -66,6 +66,17 @@ int main() {
 	float OUT=arith_encode(R, N, cp, cp_sz);
  	printf("\nEncoding: %f\n", OUT);
 
+    // Write the compressed elements in a file
+    FILE *output_file = fopen("output.txt", "wb");
+    if (output_file == NULL) {
+        printf("Error: Failed to create output file.\n");
+        return 1;
+    }
+    // fwrite(OUT, strlen(OUT), 1, output_file);
+    fprintf(output_file, "OUT: %f\n", OUT);
+    fprintf(output_file,"I: %d",I);
+    fclose(output_file);
+
     printf("\n-----------Step 04: Arithmetic Decoding-----------\n\n");
 
 	int* decoded_R;

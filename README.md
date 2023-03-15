@@ -18,6 +18,7 @@ make
     ```bash
     ./program.exe
     ```
+    - Compressed output will be in *output.txt*
 
 ## References
 - [The article of Burrows Wheeler](https://www.hpl.hp.com/techreports/Compaq-DEC/SRC-RR-124.pdf)
