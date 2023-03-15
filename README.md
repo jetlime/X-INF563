@@ -1,6 +1,6 @@
 # INF563 - Final Project
 
-C implementation of the source coding with the Burrows-Wheeler transforme. A generally better source coding than Zempel-Ziv is many cases
+C implementation of the source coding with the Burrows-Wheeler transformer. A generally better source coding than Zempel-Ziv is many cases
 it is used in *bzip2* for instance.
 
 ## Usage
