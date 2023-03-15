@@ -3,13 +3,10 @@
 #include <string.h>
 #include <sys/stat.h>
 #include "move_to_front.h"
+#include "arithmetic_coding.h"
 
 void alg_c(char *S, int N, char *L, int *I);
 char* alg_d(char *L, int *I);
-float *gen_intervals(int *R, int N, int *sz_of_prob);
-float arith_encode(int *R, int N, float *cp, int cp_sz);
-int* arith_decode(float *cp, int cp_sz, int N, float coded_value);
-void scale_interval(float *cp, float *iv, int iv_sz, float low, float high);
 
 int main() {
     // read from file

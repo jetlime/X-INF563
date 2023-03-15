@@ -1,1 +1,1 @@
-C implementation of the source coding with the Burrows-Wheeler transforme.
+paul

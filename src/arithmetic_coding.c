@@ -1,5 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
+#include "arithmetic_coding.h"
 
 float *gen_intervals(int *R, int N, int *sz_of_prob) {
 	int max=0;
