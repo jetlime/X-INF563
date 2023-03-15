@@ -26,4 +26,6 @@ make
 
 ## Authors
 
-Paul Houssel, Silviu-Andrei Maftei & Elouan Gros
+- Paul Houssel Compression Tranformation and Inverse, Pipeline Integration
+- Silviu-Andrei Maftei, Arithmetic Encoding
+- Elouan Gros: Move-to-front Encoding & Decoding, Pipeline integration
