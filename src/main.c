@@ -3,10 +3,10 @@
 #include <string.h>
 #include <sys/stat.h>
 #include "debug.h"
+#include "move_to_front.h"
 
 void alg_c(char *S, int N, char *L, int *I);
 char* alg_d(char *L, int *I);
-
 
 int main() {
     // read from file
@@ -46,6 +46,21 @@ int main() {
     alg_c(S, N, L, &I);
     printf("L = %s\n", L);
     printf("I = %d\n", I);
+
+    printf("\n-----------Step 02: Move-to-front Encoding-----------\n\n");
+    char *Y = gen_alpha(L,N);
+    int Ylen = strlen(Y);
+    char *Ycp = (char *)calloc(Ylen, 1); 
+    memcpy(Ycp, Y, Ylen);
+    int *R = move_to_front_enc(L, Ycp, N);
+    printf("R = ");
+    for (int i = 0; i < N; i++) printf("%i ", R[i]);
+    putchar('\n');
+
+    printf("\n-----------Step 05: Move-to-front Decoding-----------\n\n");
+    memcpy(Ycp, Y, Ylen);
+    char *dec = move_to_front_dec(R, Ycp, N);
+    printf("%s\n", dec);
 
     // Decompression transformation (Algorithm D)
     printf("\n\n-----------Step 06: Decompression Tranformation-----------\n\n");
