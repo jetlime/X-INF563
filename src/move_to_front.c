@@ -61,23 +61,3 @@ char *move_to_front_dec(int *R, char *Y, int N) {
 	}
 	return L;
 }
-
-/* int main() { */
-/* 	char *L = "caraab"; */
-/* 	int N = strlen(L); */
-/* 	char *Y = gen_alpha(L, N); */
-/* 	/\* char Y[5] = { 'a', 'b', 'c', 'r', '\0' }; *\/ */
-/* 	int Ylen = strlen(Y); */
-/* 	char *Ycp = (char *)calloc(Ylen, 1); */
-/* 	memcpy(Ycp, Y, Ylen); */
-
-/* 	int *enc = move_to_front_enc(L, Ycp, N); */
-/* 	for (int i = 0; i < N; i++) printf("%i ", enc[i]); */
-/* 	putchar('\n'); */
-
-/* 	memcpy(Ycp, Y, Ylen); */
-/* 	char *dec = move_to_front_dec(enc, Ycp, N); */
-/* 	printf("%s\n", dec); */
-	
-/* 	return 0; */
-/* } */

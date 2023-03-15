@@ -1,19 +1,19 @@
 # INF563 - Final Project
 
 C implementation of the source coding with the Burrows-Wheeler transforme. A generally better source coding than Zempel-Ziv is many cases
-it is used in *bzip2* for instance).
+it is used in *bzip2* for instance.
 
 ## Usage
 
 - Compilation
 
 ```bash
-gcc ./src/main.c ./src/alg_c.c ./src/alg_d.c -o program.exe 
+make
 ```
 
 - Run
 
-    - Fill encode.txt with the text you would like to compress.
+    - Fill *input.txt* with the text you would like to compress.
     - Execute program
     ```bash
     ./program.exe
@@ -26,4 +26,6 @@ gcc ./src/main.c ./src/alg_c.c ./src/alg_d.c -o program.exe
 
 ## Authors
 
-Paul Houssel, Silviu-Andrei Maftei & Elouan Gros
+- Paul Houssel Compression Tranformation and Inverse, Pipeline Integration
+- Silviu-Andrei Maftei, Arithmetic Encoding
+- Elouan Gros: Move-to-front Encoding & Decoding, Pipeline integration
